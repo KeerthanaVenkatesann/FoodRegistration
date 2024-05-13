@@ -1,0 +1,60 @@
+.home-bg {
+  background-image: url(../../../../public/Assets/bg.jpg);
+  /* background-size:; */
+  background-position: center;
+  background-color: #00242d;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+.sidenav {
+  width: 250px;
+  height: 89%;
+  position: fixed;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  left: -250px;
+  top: 10px;
+  background-color: whitesmoke;
+  color: #00242d;
+  padding-top: 60px;
+  transition: left 0.3s ease;
+}
+
+.sidenav.open {
+  left: 0;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 20px;
+  left: 26px;
+  padding: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border-radius: 5px;
+  background-color: #efc571;
+  border-color: #efc571 !important ;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  padding: 10px;
+  margin-left: -20px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+/* li:hover{
+    background-color:#163d46;
+   
+
+
+  } */
+
+.link-register {
+  text-decoration: none;
+  color: #00242d;
+  cursor: pointer;
+}

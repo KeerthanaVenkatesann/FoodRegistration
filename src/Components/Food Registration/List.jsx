@@ -17,25 +17,45 @@ const List = () => {
   };
 
   return (
-    <div>
-      <h2>User List</h2>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            {user.name}
-            {user.email}
-            {user.phoneNumber}
-            {user.location}
-            {user.shopName}
-            {user.food}
-            {user.description}
-            {user.addOn}
-            {user.quantity}
-            <button onClick={() => handleDelete(user.id)}>Delete</button>
-            <Link to={`/form/${user.id}/edit`}>Edit</Link>
-          </li>
-        ))}
-      </ul>
+<div className='whole-page'>
+     
+      <div className="table-container">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Location</th>
+              <th>Shop Name</th>
+              <th>Food</th>
+              <th>Description</th>
+              <th>Add On</th>
+              <th>Quantity</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.phoneNumber}</td>
+                <td>{user.location}</td>
+                <td>{user.shopName}</td>
+                <td>{user.food}</td>
+                <td>{user.description}</td>
+                <td>{user.addOn}</td>
+                <td>{user.quantity}</td>
+                <td>
+                  <button onClick={() => handleDelete(user.id)}>Delete</button>
+                  <Link to={`/form/${user.id}/edit`}>Edit</Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

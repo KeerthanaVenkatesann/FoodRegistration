@@ -22,7 +22,7 @@ const userReducer = (state = initialState, action) => {
     case UPDATE_USER:
       return {
         ...state,
-        user: action.payload, // Update the user state with the updated user data
+        user: action.payload, 
       };
     case DELETE_USER:
       return {

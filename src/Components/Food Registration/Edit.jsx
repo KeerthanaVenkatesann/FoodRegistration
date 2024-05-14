@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUser, updateUser } from '../Reducer/Actiontype/Actions';
 import { useParams, useNavigate } from 'react-router-dom';
-
+import "./Registration.css";
 const Edit = () => {
   const { id } = useParams();
   const [name, setName] = useState('');
@@ -15,6 +15,7 @@ const Edit = () => {
   const [description, setDescription] = useState('');
   const [addOn, setAddOn] = useState('');
   const [quantity, setQuantity] = useState('');
+  const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const nav = useNavigate();
   
@@ -43,8 +44,56 @@ const Edit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userToUpdate) {
-      dispatch(updateUser(userToUpdate.id, {  name,
+
+    const validationErrors = {};
+
+ 
+    if (!name.trim()) {
+      validationErrors.name = "Name is required";
+    }
+
+
+    if (!email.trim()) {
+      validationErrors.email = "Email is required";
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      validationErrors.email = "Invalid email format";
+    }
+
+
+    if (!phoneNumber.trim()) {
+      validationErrors.phoneNumber = "Phone number is required";
+    } else if (!/^\d{10}$/.test(phoneNumber)) {
+      validationErrors.phoneNumber = "Invalid phone number format";
+    }
+    if (!location.trim()) {
+      validationErrors.location = "location is required";
+    }
+
+    if (!shopName.trim()) {
+      validationErrors.name = "Shopname is required";
+    }
+
+    if (!food.trim()) {
+      validationErrors.name = "Food Nmae is required";
+    }
+
+    // if (!description.trim()) {
+    //   validationErrors.name = "Desccr is required";
+    // }
+
+    // if (!addOn.trim()) {
+    //   validationErrors.name = "Name is required";
+    // }
+
+    if (!quantity.trim()) {
+      validationErrors.quantity = "Name is required";
+    }
+
+
+
+
+    if (Object.keys(validationErrors).length === 0) {
+      dispatch(updateUser(userToUpdate.id, {    name,
         email,
         phoneNumber,
         location,
@@ -56,9 +105,9 @@ const Edit = () => {
       setName(''); 
       nav("/list");
     }
-   
-    // setName(''); 
- 
+    else {
+      setErrors(validationErrors);
+    }
   };
 
   return (
@@ -69,42 +118,51 @@ const Edit = () => {
         <label htmlFor="">Name</label>
         <input
         type="text"
-        placeholder="Name"
+        
         value={name}
         onChange={(e) => setName(e.target.value)}
-      /></div> 
+      />
+         {errors.name && <p className="error">{errors.name}</p>}
+      </div> 
         <div className='input-box'>
         <label htmlFor="">Email</label>
         <input
         type="text"
-        placeholder="Name"
+        
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-      /></div> 
+      />
+       {errors.email && <p className="error">{errors.email}</p>}
+      
+      </div> 
     </div>
     <div className='inner-card'><div className='input-box'>
         <label htmlFor="">Phone Number</label>
         <input
         type="text"
-        placeholder="Name"
+        
         value={phoneNumber}
         onChange={(e) => setPhoneNumber(e.target.value)}
-      /></div> 
+
+      />
+        {errors.phoneNumber && <p className="error">{errors.phoneNumber}</p>}</div> 
         <div className='input-box'>
         <label htmlFor="">Location</label>
         <input
         type="text"
-        placeholder="Name"
+        
         value={location}
         onChange={(e) => setLocation(e.target.value)}
-      /></div> 
+      />
+       {errors.location && <p className="error">{errors.location}</p>}
+      </div> 
     </div>
 
     <div className='inner-card'><div className='input-box'>
         <label htmlFor="">Shop Name</label>
         <input
         type="text"
-        placeholder="Name"
+        
         value={shopName}
         onChange={(e) => setShopName(e.target.value)}
       /></div> 
@@ -112,43 +170,55 @@ const Edit = () => {
         <label htmlFor="">Food</label>
         <input
         type="text"
-        placeholder="Name"
+        
         value={food}
         onChange={(e) => setFood(e.target.value)}
-      /></div> 
+      />
+         {errors.food && <p className="error">{errors.food}</p>}
+      </div> 
     </div>
 
     <div className='inner-card'><div className='input-box'>
         <label htmlFor="">Description</label>
         <input
         type="text"
-        placeholder="Name"
+        
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-      /></div> 
+      />
+      
+      {errors.description && <p className="error">{errors.description}</p>}
+      </div> 
         <div className='input-box'>
         <label htmlFor="">Add on</label>
         <input
         type="text"
-        placeholder="addOn"
+       
         value={addOn}
         onChange={(e) => setAddOn(e.target.value)}
-      /></div> 
+      />
+      
+      {errors.addOn && <p className="error">{errors.addOn}</p>}
+      </div> 
     </div>
 
     <div className='inner-card'><div className='input-box'>
         <label htmlFor="">Quantity</label>
         <input
         type="text"
-        placeholder="Name"
+        
         value={quantity}
         onChange={(e) => setQuantity(e.target.value)}
-      /></div> 
+      />
+        {errors.quantity && <p className="error">{errors.quantity}</p>}
+      
+      
+      </div> 
         {/* <div className='input-box'>
         <label htmlFor=""></label>
         <input
         type="text"
-        placeholder="Name"
+        
         value={name}
         onChange={(e) => setName(e.target.value)}
       /></div>  */}

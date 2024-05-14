@@ -10,6 +10,8 @@
   background-color: #fff;
   margin-bottom: 20px;
   width: 600px;
+
+/* background-color:#e9f2f9 ; */
 }
 .inner-card {
   display: flex;
@@ -24,4 +26,67 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  /* background-image: url(../../../public//Assets//formbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background-color: whitesmoke;
+}
+
+
+.table-container {
+  width: 70%;
+ 
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  border: 1px solid #dddddd;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table td button {
+  cursor: pointer;
+}
+
+.table td a {
+  text-decoration: none;
+  color: black;
+}
+
+.input-box input{
+  padding: 6px;
+  border-top: none;
+  border-left: none;
+  border-right:none;
+  border: 1ps solid #00242d ;
+}
+.input-box input:focus{
+  outline:none ;
+}
+.input-box label{
+  font-size: 18px;
+}
+.title-haven{
+  text-align: center;
+  color: #eba417;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+.button{
+padding: 5px;
+border-radius: 5px;
+border: none;
+}
+.error{
+  color: orange;
+  font-style: italic;
 }

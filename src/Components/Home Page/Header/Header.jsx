@@ -16,11 +16,14 @@ export default function Header() {
         <ul>
           <li>
             <Link to="/form" className="link-register">
-              Register
+             Make Order
+            </Link>
+            <Link to="/list" className="link-list">
+             Ordered List
             </Link>
           </li>
           {/* <li>Login</li> */}
-          <li>Profile</li>
+          {/* <li>Profile</li> */}
         </ul>
       </nav>
       <button className="toggle-button" onClick={toggleSideNav}>

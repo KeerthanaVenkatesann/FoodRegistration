@@ -12,18 +12,11 @@ const List = () => {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchUsers());
-  //   setLoading(false);
-  // }, [dispatch]);
 
-  // const handleDelete = (id) => {
-  //   dispatch(deleteUser(id));
-  // };
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
+      setLoading(true);  
       await dispatch(fetchUsers());
       setLoading(false);
     };
@@ -36,6 +29,7 @@ const List = () => {
   };
 
   const showDialog = (id) => {
+
     setSelectedUserId(id);
     setDialogVisible(true);
   };
@@ -50,11 +44,7 @@ const List = () => {
       {loading && <Loader />}
       <Link to="/">
         {" "}
-        <img
-          src="/Assets/bg-removebg-preview-removebg-preview.png"
-          alt=""
-          className="haven-back"
-        />
+     back
       </Link>
       <div className="whole-page">
         <div className="table-container">
@@ -103,6 +93,7 @@ const List = () => {
               ))}
             </tbody>
           </table>
+          
           {dialogVisible && (
             <dialog open className="dailog">
               <h3 className="title-haven">

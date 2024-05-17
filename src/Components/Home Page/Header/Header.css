@@ -1,8 +1,5 @@
-.home-bg {
-  background-image: url(../../../../public/Assets/bg.jpg);
-  /* background-size:; */
-  background-position: center;
-  background-color: #00242d;
+/* .home-bg {
+  
   height: 100vh;
   background-repeat: no-repeat;
 }
@@ -32,14 +29,12 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   border-radius: 5px;
-  background-color: #efc571;
-  border-color: #efc571 !important ;
+
 }
 
 li {
   list-style-type: none;
-  /* margin-top: 20px;
-  margin-bottom: 20px; */
+
   width: 90%;
   padding: 10px;
   margin-left: -20px;
@@ -51,19 +46,13 @@ li {
 
   font-style: normal;
 }
-/* li:hover{
-    background-color:#163d46;
-   
-
-
-  } */
 
 .link-register {
   text-decoration: none;
   color: #00242d;
   cursor: pointer;
   display: block;
-  border: 1px double #c0994b ;
+
   border-radius: 5px;
   padding: 3px;
 
@@ -73,8 +62,88 @@ li {
   color: #00242d;
   cursor: pointer;
   display: block;
-  border: 1px double #c0994b ;
+
   border-radius: 5px;
   margin-top: 20px;
   padding: 3px;
+} */
+
+
+.home-bg {
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 10px 20px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  background-color: #495057;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #343a40;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+.sidenav.open {
+  left: 0;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidenav ul li {
+  padding: 8px 16px;
+}
+
+.sidenav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+.sidenav ul li a:hover {
+  background-color: #495057;
+}
+
+.toggle-button {
+  background-color: #343a40;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.toggle-button:hover {
+  background-color: #495057;
 }

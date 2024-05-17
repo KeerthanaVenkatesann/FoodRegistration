@@ -113,14 +113,7 @@ const Form = () => {
   return (
     <>
       <div className="main">
-        <Link to="/">
-          {" "}
-          <img
-            src="/Assets/bg-removebg-preview-removebg-preview.png"
-            alt=""
-            className="haven-back"
-          />
-        </Link>
+        <Link to="/"> back</Link>
         <div className="whole-page">
           <form onSubmit={handleSubmit} className="Form-card-css">
             <h2 className="title-haven">
@@ -272,11 +265,11 @@ const Form = () => {
                 )}
               </div>
             </div>
-          <div className="btn-div">
+            <div className="btn-div">
               <button type="submit" className="button">
                 Hurry up!
               </button>
-              </div>
+            </div>
           </form>
         </div>
       </div>

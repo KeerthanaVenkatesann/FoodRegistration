@@ -9,8 +9,10 @@ import Layout from './Components/Layout/Layout';
 function App() {
   return (
     <BrowserRouter>
+    <Layout />
     <Routes>
-    <Route path='/'element={<Layout/>}></Route>
+    
+    
     <Route path="/form/:id/edit" element={<Edit />    }/>
       <Route path='/form'element={<Form/>}></Route>
       <Route path='/list'element={<List/>}></Route>

@@ -1,42 +1,42 @@
 // Edit.js
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchUser, updateUser } from '../Reducer/Actiontype/Actions';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUser, updateUser } from "../Reducer/Actiontype/Actions";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import "./Registration.css";
 const Edit = () => {
   const { id } = useParams();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [location, setLocation] = useState('');
-  const [shopName, setShopName] = useState('');
-  const [food, setFood] = useState('');
-  const [description, setDescription] = useState('');
-  const [addOn, setAddOn] = useState('');
-  const [quantity, setQuantity] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [location, setLocation] = useState("");
+  const [shopName, setShopName] = useState("");
+  const [food, setFood] = useState("");
+  const [description, setDescription] = useState("");
+  const [addOn, setAddOn] = useState("");
+  const [quantity, setQuantity] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [errors, setErrors] = useState({});
   const dispatch = useDispatch();
   const nav = useNavigate();
-  
+
   // Fetch user data by ID when the component mounts
   useEffect(() => {
     dispatch(fetchUser(id));
   }, [dispatch, id]);
-  
+
   // Get user data from Redux store
   const userToUpdate = useSelector((state) => state.user);
 
   // Update local state when user data changes
   useEffect(() => {
     if (userToUpdate) {
-      setName(userToUpdate.name); 
+      setName(userToUpdate.name);
       setEmail(userToUpdate.email);
       setPhoneNumber(userToUpdate.phoneNumber);
       setLocation(userToUpdate.location);
       setShopName(userToUpdate.shopName);
-      setFood(userToUpdate.food);    
+      setFood(userToUpdate.food);
       setDescription(userToUpdate.description);
       setAddOn(userToUpdate.addOn);
       setQuantity(userToUpdate.quantity);
@@ -49,18 +49,15 @@ const Edit = () => {
 
     const validationErrors = {};
 
- 
     if (!name.trim()) {
       validationErrors.name = "Name is required";
     }
-
 
     if (!email.trim()) {
       validationErrors.email = "Email is required";
     } else if (!/^\S+@\S+\.\S+$/.test(email)) {
       validationErrors.email = "Invalid email format";
     }
-
 
     if (!phoneNumber.trim()) {
       validationErrors.phoneNumber = "Phone number is required";
@@ -96,20 +93,22 @@ const Edit = () => {
         "Please select at least one payment method";
     }
 
-
-
     if (Object.keys(validationErrors).length === 0) {
-      dispatch(updateUser(userToUpdate.id, {    name,
-        email,
-        phoneNumber,
-        location,
-        shopName,
-        food,
-        description,
-        addOn,
-        quantity,
-        paymentMethod,}));
-      setName(''); 
+      dispatch(
+        updateUser(userToUpdate.id, {
+          name,
+          email,
+          phoneNumber,
+          location,
+          shopName,
+          food,
+          description,
+          addOn,
+          quantity,
+          paymentMethod,
+        })
+      );
+      setName("");
       setEmail("");
       setPhoneNumber("");
       setLocation("");
@@ -120,8 +119,7 @@ const Edit = () => {
       setQuantity("");
       setPaymentMethod("");
       nav("/list");
-    }
-    else {
+    } else {
       setErrors(validationErrors);
     }
   };
@@ -140,155 +138,162 @@ const Edit = () => {
   };
   return (
     <div className="main">
-      <Link to="/"> <img src="/Assets/bg-removebg-preview-removebg-preview.png" alt=""  className="haven-back"/></Link>
-    <div className="whole-page">
-    <form onSubmit={handleSubmit} className="Form-card-css">
-      <h2 className="title-haven"> Register your <span className="order">Order in</span> <span className="mango"> Mango Haven</span> </h2>
-      <div className="form-contain-ner">
-        <div className="inner-card">
-          <div className="input-box">
-            <label htmlFor="">Shop Name :</label>
-            <input
-              type="text"
-              value={shopName}
-              onChange={(e) => setShopName(e.target.value)}
-            />
-            {errors.shopName && (
-              <span className="error">{errors.shopName}</span>
-            )}
-          </div>
-          <div className="input-box">
-            <label htmlFor="">Food :</label>
-            <input
-              type="text"
-              value={food}
-              onChange={(e) => setFood(e.target.value)}
-            />
-            {errors.food && <span className="error">{errors.food}</span>}
-          </div>
-        </div>
-
-        <div className="inner-card">
-          <div className="input-box">
-            <label htmlFor="">Add on :</label>
-            <input
-              type="text"
-              value={addOn}
-              onChange={(e) => setAddOn(e.target.value)}
-            />
-            {errors.addOn && <span className="error">{errors.addOn}</span>}
-          </div>
-
-          <div className="input-box">
-            <label htmlFor="">Quantity :</label>
-            <input
-              type="number"
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
-            />
-            {errors.quantity && (
-              <span className="error">{errors.quantity}</span>
-            )}
-          </div>
-        </div>
-
-        <div className="inner-card">
-          <div className="input-box text-box">
-            <label htmlFor="">Special`` Instructions `` :</label>
-            <textarea
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-            {errors.description && (
-              <span className="error">{errors.description}</span>
-            )}
-          </div>
-        </div>
-        <div className="inner-card">
-          <div className="input-box">
-            <label htmlFor="">Name :</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            {errors.name && <span className="error">{errors.name}</span>}
-          </div>
-          <div className="input-box">
-            <label htmlFor="">Email :</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {errors.email && <span className="error">{errors.email}</span>}
-          </div>
-        </div>
-        <div className="inner-card">
-          <div className="input-box">
-            <label htmlFor="">Phone Number :</label>
-            <input
-              type="number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-            {errors.phoneNumber && (
-              <span className="error">{errors.phoneNumber}</span>
-            )}
-          </div>
-          <div className="input-box">
-            <label htmlFor="">Delivery Address :</label>
-            <input
-              type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-            />
-            {errors.location && (
-              <span className="error">{errors.location}</span>
-            )}
-          </div>
-        </div>
-
-        <div>
-          {/* <div className="input-box"> */}
-          <label htmlFor="" className="method">Payment Method :</label>
-          <div className="inner-card">
-            <div>
-              <label>
+      <Link to="/"> back</Link>
+      <div className="whole-page">
+        <form onSubmit={handleSubmit} className="Form-card-css">
+          <h2 className="title-haven">
+            {" "}
+            Register your <span className="order">Order in</span>{" "}
+            <span className="mango"> Mango Haven</span>{" "}
+          </h2>
+          <div className="form-contain-ner">
+            <div className="inner-card">
+              <div className="input-box">
+                <label htmlFor="">Shop Name :</label>
                 <input
-                  type="checkbox"
-                  value="Cash on Delivery/Pickup"
-                  checked={paymentMethod === "Cash on Delivery/Pickup"}
-                  onChange={handlePaymentMethodChange}
+                  type="text"
+                  value={shopName}
+                  onChange={(e) => setShopName(e.target.value)}
                 />
-                Cash on Delivery/Pickup
-              </label>
-            </div>
-            <div>
-              <label>
+                {errors.shopName && (
+                  <span className="error">{errors.shopName}</span>
+                )}
+              </div>
+              <div className="input-box">
+                <label htmlFor="">Food :</label>
                 <input
-                  type="checkbox"
-                  value="Credit/Debit Card"
-                  checked={paymentMethod === "Credit/Debit Card"}
-                  onChange={handlePaymentMethodChange}
+                  type="text"
+                  value={food}
+                  onChange={(e) => setFood(e.target.value)}
                 />
-                Credit/Debit Card
+                {errors.food && <span className="error">{errors.food}</span>}
+              </div>
+            </div>
+
+            <div className="inner-card">
+              <div className="input-box">
+                <label htmlFor="">Add on :</label>
+                <input
+                  type="text"
+                  value={addOn}
+                  onChange={(e) => setAddOn(e.target.value)}
+                />
+                {errors.addOn && <span className="error">{errors.addOn}</span>}
+              </div>
+
+              <div className="input-box">
+                <label htmlFor="">Quantity :</label>
+                <input
+                  type="number"
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                />
+                {errors.quantity && (
+                  <span className="error">{errors.quantity}</span>
+                )}
+              </div>
+            </div>
+
+            <div className="inner-card">
+              <div className="input-box text-box">
+                <label htmlFor="">Special`` Instructions `` :</label>
+                <textarea
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+                {errors.description && (
+                  <span className="error">{errors.description}</span>
+                )}
+              </div>
+            </div>
+            <div className="inner-card">
+              <div className="input-box">
+                <label htmlFor="">Name :</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                {errors.name && <span className="error">{errors.name}</span>}
+              </div>
+              <div className="input-box">
+                <label htmlFor="">Email :</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                {errors.email && <span className="error">{errors.email}</span>}
+              </div>
+            </div>
+            <div className="inner-card">
+              <div className="input-box">
+                <label htmlFor="">Phone Number :</label>
+                <input
+                  type="number"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+                {errors.phoneNumber && (
+                  <span className="error">{errors.phoneNumber}</span>
+                )}
+              </div>
+              <div className="input-box">
+                <label htmlFor="">Delivery Address :</label>
+                <input
+                  type="text"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+                {errors.location && (
+                  <span className="error">{errors.location}</span>
+                )}
+              </div>
+            </div>
+
+            <div>
+              {/* <div className="input-box"> */}
+              <label htmlFor="" className="method">
+                Payment Method :
               </label>
+              <div className="inner-card">
+                <div>
+                  <label>
+                    <input
+                      type="checkbox"
+                      value="Cash on Delivery/Pickup"
+                      checked={paymentMethod === "Cash on Delivery/Pickup"}
+                      onChange={handlePaymentMethodChange}
+                    />
+                    Cash on Delivery/Pickup
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <input
+                      type="checkbox"
+                      value="Credit/Debit Card"
+                      checked={paymentMethod === "Credit/Debit Card"}
+                      onChange={handlePaymentMethodChange}
+                    />
+                    Credit/Debit Card
+                  </label>
+                </div>
+              </div>
+              {/* </div> */}
+              {errors.paymentMethod && (
+                <span className="error">{errors.paymentMethod}</span>
+              )}
             </div>
           </div>
-          {/* </div> */}
-          {errors.paymentMethod && (
-            <span className="error">{errors.paymentMethod}</span>
-          )}
-        </div>
+          <div className="btn-div">
+            <button type="submit" className="button">
+              Edit!
+            </button>
+          </div>
+        </form>
       </div>
-      <div className="btn-div">
-        <button type="submit" className="button">
-        Edit!
-        </button>
-      </div>
-    </form>
-  </div></div>
+    </div>
   );
 };
 

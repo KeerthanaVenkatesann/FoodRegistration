@@ -113,17 +113,16 @@ const Form = () => {
   return (
     <>
       <div className="main">
-        <Link to="/"> back</Link>
+        {/* <Link to="/"> back</Link> */}
         <div className="whole-page">
-          <form onSubmit={handleSubmit} className="Form-card-css">
-            <h2 className="title-haven">
+          <form onSubmit={handleSubmit} className="Form-card-css card">
+            <h3 className="title-haven  ">
               {" "}
-              Register your <span className="order">Order in</span>{" "}
-              <span className="mango"> Mango Haven</span>{" "}
-            </h2>
+            FOOD  REGISTRATION
+            </h3>
             <div className="form-contain-ner">
-              <div className="inner-card">
-                <div className="input-box">
+              <div className="inner-card d-md-flex  col-12">
+                <div className="input-box   px-1 col-md-6">
                   <label htmlFor="">Shop Name :</label>
                   <input
                     type="text"
@@ -134,7 +133,7 @@ const Form = () => {
                     <span className="error">{errors.shopName}</span>
                   )}
                 </div>
-                <div className="input-box">
+                <div className="input-box   px-1 col-md-6">
                   <label htmlFor="">Food :</label>
                   <input
                     type="text"
@@ -145,8 +144,8 @@ const Form = () => {
                 </div>
               </div>
 
-              <div className="inner-card">
-                <div className="input-box">
+              <div className="inner-card d-md-flex  col-12">
+                <div className="input-box   px-1 col-md-6">
                   <label htmlFor="">Add on :</label>
                   <input
                     type="text"
@@ -158,7 +157,7 @@ const Form = () => {
                   )}
                 </div>
 
-                <div className="input-box">
+                <div className="input-box   px-1 col-md-6">
                   <label htmlFor="">Quantity :</label>
                   <input
                     type="number"
@@ -171,8 +170,8 @@ const Form = () => {
                 </div>
               </div>
 
-              <div className="inner-card">
-                <div className="input-box text-box">
+              <div className="inner-card d-md-flex  col-12">
+                <div className="input-box text-box px-1 col-md-6">
                   <label htmlFor="">Special`` Instructions ``:</label>
                   <textarea
                     value={description}
@@ -183,8 +182,8 @@ const Form = () => {
                   )}
                 </div>
               </div>
-              <div className="inner-card">
-                <div className="input-box">
+              <div className="inner-card d-md-flex  col-12">
+                <div className="input-box  px-1  col-md-6">
                   <label htmlFor="">Name :</label>
                   <input
                     type="text"
@@ -193,7 +192,7 @@ const Form = () => {
                   />
                   {errors.name && <span className="error">{errors.name}</span>}
                 </div>
-                <div className="input-box">
+                <div className="input-box px-1  col-md-6">
                   <label htmlFor="">Email :</label>
                   <input
                     type="email"
@@ -205,8 +204,8 @@ const Form = () => {
                   )}
                 </div>
               </div>
-              <div className="inner-card">
-                <div className="input-box">
+              <div className="inner-card d-md-flex  col-12">
+                <div className="input-box  px-1 col-md-6">
                   <label htmlFor="">Phone Number :</label>
                   <input
                     type="number"
@@ -217,7 +216,7 @@ const Form = () => {
                     <span className="error">{errors.phoneNumber}</span>
                   )}
                 </div>
-                <div className="input-box">
+                <div className="input-box  px-1 col-md-6">
                   <label htmlFor="">Delivery Address :</label>
                   <input
                     type="text"
@@ -231,12 +230,12 @@ const Form = () => {
               </div>
 
               <div>
-                {/* <div className="input-box"> */}
+               
                 <label htmlFor="" className="method">
                   Payment Method :
                 </label>
-                <div className="inner-card">
-                  <div id="cod">
+                <div className="inner-card col-12 d-md-flex">
+                  <div id="cod" className="col-md-6">
                     <label>
                       <input
                         type="checkbox"
@@ -247,7 +246,7 @@ const Form = () => {
                       Cash on Delivery/Pickup
                     </label>
                   </div>
-                  <div id="credit">
+                  <div id="credit" className="col-md-6">
                     <label>
                       <input
                         type="checkbox"
@@ -259,15 +258,15 @@ const Form = () => {
                     </label>
                   </div>
                 </div>
-                {/* </div> */}
+              
                 {errors.paymentMethod && (
                   <span className="error">{errors.paymentMethod}</span>
                 )}
               </div>
             </div>
             <div className="btn-div">
-              <button type="submit" className="button">
-                Hurry up!
+              <button type="submit" className="button btn-success mt-2 ">
+               Register
               </button>
             </div>
           </form>

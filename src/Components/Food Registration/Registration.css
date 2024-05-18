@@ -1,40 +1,47 @@
-/* .input-box {
+.input-box {
   display: flex;
   flex-direction: column;
 }
 * {
-  background-color: #faf1de;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
+
 .Form-card-css {
-
   border-radius: 8px;
-  box-shadow: 0 4px 6px #ebb851;
+/* 
+  box-shadow: 1px 1px 1px 1px rgb(161, 161, 161); */
+  /* 
+  width: 550px; */
+  /* padding: 20px 20px 60px 20px; */
+  padding: 10px;
 
-
-  border-radius: 12% 45% 65% 15% / 55% 17% 37% 82%;
-  width: 500px;
-  padding: 20px;
-  height: 650px;
-
+  padding-right: 35px;
+  position: relative;
+  top: 20px;
 }
-.inner-card {
+/* .inner-card {
   display: flex;
-}
+}*/
 .inner-card div {
-  width: 50%;
+  /* width: 50%; */
   margin: 6px;
   height: 70px;
 }
 .whole-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
- 
-  background-color: #faf1de;
 }
-.main {
-  background-color: #faf1de;
+.link{
+  text-decoration: none;
+  color: black;
+text-align: left !important;
+
+
+
 }
 .haven-back {
   position: fixed;
@@ -43,25 +50,17 @@
   right: 0px;
 }
 .method {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  margin-top: 5px;
-  font-family: "Prompt", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+   margin-left: 10px; 
+   margin-bottom: 10px; 
+   margin-top: 5px; 
+
   font-size: 18px;
 
   color: rgb(50, 49, 49);
 }
 
 .table-container {
-  width: 80%;
-}
-
-.table {
-  width: 100%;
-  position: relative;
-  border-collapse: collapse;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .table th,
@@ -69,19 +68,14 @@
   padding: 8px;
   border: 1px solid black;
   text-align: center;
+  align-items: center;
 }
 .table td {
-  font-family: "Libre Franklin", sans-serif;
-  font-optical-sizing: auto;
-
   font-style: normal;
 }
 .table th {
-  background-color: rgb(237, 178, 97);
   font-size: 18px;
-  font-family: "Prompt", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  background-color: rgba(169, 181, 175, 0.8);
   color: rgb(50, 49, 49);
 }
 
@@ -96,19 +90,20 @@
 
 .input-box input {
   padding: 6px;
-  border-top: none;
+  /* border-top: none;
   border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #00242d;
+  border-right: none; */
+  border-radius: 5px;
+  border: 1px solid grey;
   background: transparent;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .input-box textarea {
   padding: 6px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid #00242d;
+  border-radius: 5px;
+  border: 1px solid grey;
   background: transparent;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .input-box textarea:focus {
   outline: none;
@@ -119,69 +114,54 @@
 }
 .input-box label {
   font-size: 18px;
-  font-family: "Prompt", sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 400;
   font-style: normal;
   color: rgb(50, 49, 49);
 }
 .title-haven {
   text-align: center;
-  font-family: "Protest Revolution", sans-serif;
-  font-weight: 400;
-  text-align: center;
-  font-style: normal;
-  color: green;
-  margin-bottom: 10px;
+  color: rgb(80, 79, 79);
+  margin-bottom: 20px;
 }
-.order {
-  color: rgb(158, 106, 32);
-}
-.mango {
-  color: #f1a000;
-}
+
 .button {
   padding: 8px;
   border-radius: 5px;
   border: none;
   color: white;
-  background-color: green;
-  position: relative;
-  
-  top: 27px;
-  font-family: "Zeyada", cursive;
-  font-weight: 400;
-  font-style: normal;
+  /* background-color: green; */
+  /* position: relative; */
+
+  /* top: 27px; */
+
   font-size: 20px;
 }
 .error {
-  color: orange;
-  font-style: italic;
-
+  color: red;
+  font-size: 12px;
 }
 .btn-div {
   text-align: center !important;
 }
-.form-contain-ner {
-  height: 460px;
-}
+
 .text-box {
   width: 100% !important;
 }
-.form-contain-ner {
-  margin-top: 50px;
-}
+
 #action {
   padding: 10px;
-  width: 250px !important;
+  /* width: 250px !important; */
 }
 .edit {
-  background-color: green;
-  
+  /* background-color: green; */
+
   border-radius: 5px;
-  width: 50%;
+  /* width: 38% !important; */
   height: 30px;
   border: none;
-  font-family: "Zeyada", cursive;
+margin-right: 5px;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -192,20 +172,21 @@
 
   border-radius: 5px;
   border: none;
-  width: 50%;
+  /* width: 38% !important; */
   height: 30px;
-  font-family: "Zeyada", cursive;
+  margin-left: 5px;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
 }
 .editby {
-  background: transparent;
+  background: transparent !important;
   color: white !important;
-  font-family: "Zeyada", cursive;
+  /* width: 38% !important; */
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
+  margin-right: 4px;
 }
 
 #cod {
@@ -233,7 +214,7 @@
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;
-  margin: auto; 
+  margin: auto;
 }
 
 @keyframes spin {
@@ -250,28 +231,26 @@
   top: 300px;
   padding: 30px;
   border-radius: 7px;
-  font-family: "Protest Revolution", sans-serif;
+
   font-weight: 400;
   text-align: center;
 
   font-style: normal;
-  border: none;
-  box-shadow: 0 4px 6px #ebb851;
 }
 .del {
-  background-color: rgb(164, 52, 15);
+  /* background-color: rgb(164, 52, 15); */
   border: none;
   color: white;
   padding: 10px;
   margin: 5px;
+  /* width: 38% !important; */
   border-radius: 4px;
 }
 .nope {
-  background-color: green;
+  /* background-color: green; */
   border: none;
   color: white;
   padding: 10px;
   margin: 5px;
   border-radius: 4px;
-} */
-
+}

@@ -105,7 +105,7 @@ const Edit = () => {
           description,
           addOn,
           quantity,
-          paymentMethod,
+          // paymentMethod,
         })
       );
       setName("");
@@ -117,7 +117,7 @@ const Edit = () => {
       setDescription("");
       setAddOn("");
       setQuantity("");
-      setPaymentMethod("");
+      // setPaymentMethod("");
       nav("/list");
     } else {
       setErrors(validationErrors);
@@ -138,17 +138,15 @@ const Edit = () => {
   };
   return (
     <div className="main">
-      <Link to="/"> back</Link>
+      {/* <Link to="/"> back</Link> */}
       <div className="whole-page">
         <form onSubmit={handleSubmit} className="Form-card-css">
-          <h2 className="title-haven">
-            {" "}
-            Register your <span className="order">Order in</span>{" "}
-            <span className="mango"> Mango Haven</span>{" "}
-          </h2>
+          <h3 className="title-haven">
+           FOOD REGISTRATION
+          </h3>
           <div className="form-contain-ner">
-            <div className="inner-card">
-              <div className="input-box">
+            <div className="inner-card d-md-flex col-12">
+              <div className="input-box col-md-6 px-1">
                 <label htmlFor="">Shop Name :</label>
                 <input
                   type="text"
@@ -159,7 +157,7 @@ const Edit = () => {
                   <span className="error">{errors.shopName}</span>
                 )}
               </div>
-              <div className="input-box">
+              <div className="input-box col-md-6 px-1">
                 <label htmlFor="">Food :</label>
                 <input
                   type="text"
@@ -170,8 +168,8 @@ const Edit = () => {
               </div>
             </div>
 
-            <div className="inner-card">
-              <div className="input-box">
+            <div className="inner-card d-md-flex  col-12 ">
+              <div className="input-box px-1 col-md-6">
                 <label htmlFor="">Add on :</label>
                 <input
                   type="text"
@@ -181,7 +179,7 @@ const Edit = () => {
                 {errors.addOn && <span className="error">{errors.addOn}</span>}
               </div>
 
-              <div className="input-box">
+              <div className="input-box col-md-6 px-1">
                 <label htmlFor="">Quantity :</label>
                 <input
                   type="number"
@@ -194,8 +192,8 @@ const Edit = () => {
               </div>
             </div>
 
-            <div className="inner-card">
-              <div className="input-box text-box">
+            <div className="inner-card d-md-flex  col-12">
+              <div className="input-box text-box  ">
                 <label htmlFor="">Special`` Instructions `` :</label>
                 <textarea
                   value={description}
@@ -206,8 +204,8 @@ const Edit = () => {
                 )}
               </div>
             </div>
-            <div className="inner-card">
-              <div className="input-box">
+            <div className="inner-card d-md-flex  col-12">
+              <div className="input-box col-md-6 px-1">
                 <label htmlFor="">Name :</label>
                 <input
                   type="text"
@@ -216,7 +214,7 @@ const Edit = () => {
                 />
                 {errors.name && <span className="error">{errors.name}</span>}
               </div>
-              <div className="input-box">
+              <div className="input-box col-md-6 px-1">
                 <label htmlFor="">Email :</label>
                 <input
                   type="email"
@@ -226,8 +224,8 @@ const Edit = () => {
                 {errors.email && <span className="error">{errors.email}</span>}
               </div>
             </div>
-            <div className="inner-card">
-              <div className="input-box">
+            <div className="inner-card d-md-flex  col-12 ">
+              <div className="input-box col-md-6 px-1">
                 <label htmlFor="">Phone Number :</label>
                 <input
                   type="number"
@@ -238,7 +236,7 @@ const Edit = () => {
                   <span className="error">{errors.phoneNumber}</span>
                 )}
               </div>
-              <div className="input-box">
+              <div className="input-box col-md-6 px-1">
                 <label htmlFor="">Delivery Address :</label>
                 <input
                   type="text"
@@ -250,14 +248,14 @@ const Edit = () => {
                 )}
               </div>
             </div>
-
+          
             <div>
-              {/* <div className="input-box"> */}
+             
               <label htmlFor="" className="method">
                 Payment Method :
               </label>
-              <div className="inner-card">
-                <div>
+              <div className="inner-card col-12 d-md-flex">
+                <div className="col-md-6">
                   <label>
                     <input
                       type="checkbox"
@@ -268,7 +266,7 @@ const Edit = () => {
                     Cash on Delivery/Pickup
                   </label>
                 </div>
-                <div>
+                <div className="col-md-6">
                   <label>
                     <input
                       type="checkbox"
@@ -280,15 +278,15 @@ const Edit = () => {
                   </label>
                 </div>
               </div>
-              {/* </div> */}
+            
               {errors.paymentMethod && (
                 <span className="error">{errors.paymentMethod}</span>
               )}
-            </div>
+            </div> 
           </div>
           <div className="btn-div">
-            <button type="submit" className="button">
-              Edit!
+            <button type="submit" className="button btn-success mt-2">
+              Edit
             </button>
           </div>
         </form>

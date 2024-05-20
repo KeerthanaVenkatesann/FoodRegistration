@@ -13,9 +13,9 @@ function App() {
     <Routes>
     
     
-    <Route path="/form/:id/edit" element={<Edit />    }/>
-      <Route path='/form'element={<Form/>}></Route>
-      <Route path='/list'element={<List/>}></Route>
+    <Route path="/foodregistration/:id/edit" element={<Edit />    }/>
+      <Route path='/foodregistration'element={<Form/>}></Route>
+      <Route path='/listmanaging'element={<List/>}></Route>
       <Route path='/edit'element={<Edit/>}></Route>
     </Routes>
       </BrowserRouter>

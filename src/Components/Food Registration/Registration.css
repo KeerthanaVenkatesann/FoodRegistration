@@ -2,27 +2,32 @@
   display: flex;
   flex-direction: column;
 }
-* {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
 
+.colmn {
+  height: 50px !important;
+}
 .Form-card-css {
   border-radius: 8px;
-/* 
+  /* 
   box-shadow: 1px 1px 1px 1px rgb(161, 161, 161); */
   /* 
   width: 550px; */
   /* padding: 20px 20px 60px 20px; */
   padding: 10px;
+  padding-left: 20px;
 
-  padding-right: 35px;
+
+  padding-right: 20px;
   position: relative;
-  top: 20px;
+  top: 30px;
 }
 /* .inner-card {
   display: flex;
 }*/
+
+.danger {
+  background-color: red !important;
+}
 .inner-card div {
   /* width: 50%; */
   margin: 6px;
@@ -35,13 +40,10 @@
   align-items: center;
   height: 100vh;
 }
-.link{
+.link {
   text-decoration: none;
   color: black;
-text-align: left !important;
-
-
-
+  text-align: left !important;
 }
 .haven-back {
   position: fixed;
@@ -50,17 +52,13 @@ text-align: left !important;
   right: 0px;
 }
 .method {
-   margin-left: 10px; 
-   margin-bottom: 10px; 
-   margin-top: 5px; 
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 5px;
 
   font-size: 18px;
 
   color: rgb(50, 49, 49);
-}
-
-.table-container {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .table th,
@@ -113,7 +111,7 @@ text-align: left !important;
   outline: none;
 }
 .input-box label {
-  font-size: 18px;
+  font-size: 15px;
   /* font-family: Arial, Helvetica, sans-serif; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 400;
@@ -121,29 +119,59 @@ text-align: left !important;
   color: rgb(50, 49, 49);
 }
 .title-haven {
-  text-align: center;
+  text-align: start;
+  font-size: 28px !important;
   color: rgb(80, 79, 79);
-  margin-bottom: 20px;
+  /* margin-bottom: 10px; */
+  font-family: "Open Sans", sans-serif !important;
+  font-optical-sizing: auto;
 }
 
+#cancel-btn {
+  background-color: blue !important;
+}
 .button {
   padding: 8px;
   border-radius: 5px;
   border: none;
   color: white;
-  /* background-color: green; */
-  /* position: relative; */
+  background-color: rgba(25, 135, 84, 0.8) !important;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 
-  /* top: 27px; */
+  font-size: 17px;
+}
+button {
+  border: none !important;
+  background: none !important;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif !important;
+}
+.button:hover {
+  background-color: rgba(19, 108, 66, 0.8) !important;
+}
+.cancel {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: rgb(55, 54, 54) !important;
 
-  font-size: 20px;
+  margin-right: 5px;
+
+  font-size: 17px;
+}
+.cancel:hover {
+  background-color: rgb(41, 40, 40) !important;
 }
 .error {
   color: red;
   font-size: 12px;
 }
 .btn-div {
-  text-align: center !important;
+  text-align: right !important;
 }
 
 .text-box {
@@ -152,16 +180,13 @@ text-align: left !important;
 
 #action {
   padding: 10px;
-  /* width: 250px !important; */
 }
 .edit {
-  /* background-color: green; */
-
   border-radius: 5px;
-  /* width: 38% !important; */
+
   height: 30px;
   border: none;
-margin-right: 5px;
+  margin-right: 5px;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -172,7 +197,7 @@ margin-right: 5px;
 
   border-radius: 5px;
   border: none;
-  /* width: 38% !important; */
+
   height: 30px;
   margin-left: 5px;
   font-weight: 400;
@@ -182,7 +207,7 @@ margin-right: 5px;
 .editby {
   background: transparent !important;
   color: white !important;
-  /* width: 38% !important; */
+
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
@@ -253,4 +278,36 @@ margin-right: 5px;
   padding: 10px;
   margin: 5px;
   border-radius: 4px;
+}
+.data-tab {
+  height: 30%;
+  width: 90%;
+}
+.search-icons {
+  position: absolute;
+  right: 15px;
+  font-weight: 700;
+  font-size: larger;
+}
+
+.custom-data-table {
+  max-height: 450px; /* Adjust this value as needed */
+  overflow-y: auto;
+}
+.p-button {
+  /* color: #ffffff;
+    background: #06b6d4;
+    border: 1px solid #06b6d4; */
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  border-radius: 6px;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  text-align: left;
+  border: 1px solid #e5e7eb;
+  border-width: 0 0 1px 0;
+  /* padding: 1rem 1rem; */
 }

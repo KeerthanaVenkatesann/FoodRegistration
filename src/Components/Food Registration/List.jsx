@@ -364,7 +364,7 @@ const List = () => {
             onSelectionChange={(e) => handleRowSelect(e)}
             dataKey="id"
             paginator
-            rows={10}
+            rows={2}
             rowsPerPageOptions={[3, 16, 9, 15, 25]}
             // loading={loading}
             header={header()}

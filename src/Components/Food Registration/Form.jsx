@@ -37,38 +37,47 @@ const Form = () => {
     const validationErrors = {};
 
     if (!name.trim()) {
-      validationErrors.name = "Please fill your name!";
+      validationErrors.name = "Your name is required. Please provide it.";
     }
 
     if (!email.trim()) {
-      validationErrors.email = "Please fill your email!";
+      validationErrors.email =
+        "Your email address is required. Please provide it.";
     } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-      validationErrors.email = "Invalid email format!";
+      validationErrors.email =
+        "The email format is incorrect. Please enter a valid email.";
     }
 
     if (!phoneNumber.trim()) {
-      validationErrors.phoneNumber = "Please fill your number!";
+      validationErrors.phoneNumber =
+        "Your phone number is required. Please provide it.";
     } else if (!/^\d{10}$/.test(phoneNumber)) {
-      validationErrors.phoneNumber = "Invalid phone number format!";
+      validationErrors.phoneNumber = "The phone number must be 10 digits.";
     }
     if (!address.trim()) {
-      validationErrors.address = "Give your address!";
+      validationErrors.address = "Your address is required. Please provide it.";
     }
 
     if (!business.trim()) {
-      validationErrors.business = "business Name should be must!";
+      validationErrors.business =
+        "Business name is required. Please enter your business name.";
     }
 
     if (!food.trim()) {
-      validationErrors.food = "Select your food please!";
+      validationErrors.food =
+        "Food type is required. Please enter the type of food you offer.";
     }
 
     if (!description.trim()) {
-      validationErrors.addressTwo = "Description is required";
+      validationErrors.description =
+        "Please provide a description of your food.";
     }
-
+    if (!addressTwo.trim())
+      validationErrors.addressTwo =
+        "Please provide another address if applicable.";
     if (!date.trim()) {
-      validationErrors.date = "date is Required!";
+      validationErrors.date =
+        "Opening date is required. Please provide the intended opening date for your business.";
     }
 
     if (Object.keys(validationErrors).length === 0) {
@@ -92,6 +101,11 @@ const Form = () => {
       setErrors(validationErrors);
     }
   };
+  const handleNameChange = (e) => {
+    const value = e.target.value;
+    const filteredValue = value.replace(/[^a-zA-Z\s]/g, "");
+    setName(filteredValue);
+  };
 
   return (
     <>
@@ -101,7 +115,7 @@ const Form = () => {
             onSubmit={handleSubmit}
             className="Form-card-css card  shadow-sm   w-50"
           >
-            <h3 className="title-haven  ">Food Registration</h3>
+            <h3 className="title-haven  ">Food Registration </h3>
             <div className="form-contain-ner">
               <div className=" mb-3 mt-2">Personal Information :</div>
               <div className="card shadow-sm col-12 pb-2  pt-1">
@@ -112,7 +126,9 @@ const Form = () => {
                       className=""
                       type="text"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
+                      // onChange={(e) => setName(e.target.value)}
+                      onChange={handleNameChange}
+
                     />
                     {errors.name && (
                       <span className="error">{errors.name}</span>

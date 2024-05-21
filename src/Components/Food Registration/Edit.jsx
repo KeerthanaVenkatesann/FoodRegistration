@@ -113,7 +113,11 @@ const Edit = () => {
       setErrors(validationErrors);
     }
   };
-
+  const handleNameChange = (e) => {
+    const value = e.target.value;
+    const filteredValue = value.replace(/[^a-zA-Z\s]/g, "");
+    setName(filteredValue);
+  };
   return (
     <div className="main">
       <div className="whole-page">
@@ -126,11 +130,7 @@ const Edit = () => {
               <div className="inner-card d-md-flex col-12 pe-4">
                 <div className="input-box col-md-6 px-1">
                   <label htmlFor="">Name </label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
+                  <input type="text" value={name} onChange={handleNameChange} />
                   {errors.name && <span className="error">{errors.name}</span>}
                 </div>
                 <div className="input-box col-md-6 px-1">

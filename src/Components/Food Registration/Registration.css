@@ -121,7 +121,7 @@
 .title-haven {
   text-align: start;
   font-size: 28px !important;
-  color: rgb(80, 79, 79);
+  color: rgba(25, 135, 84, 0.8);
   /* margin-bottom: 10px; */
   font-family: "Open Sans", sans-serif !important;
   font-optical-sizing: auto;
@@ -281,7 +281,7 @@ button {
 }
 .data-tab {
   height: 30%;
-  width: 90%;
+  width: 100%;
 }
 .search-icons {
   position: absolute;

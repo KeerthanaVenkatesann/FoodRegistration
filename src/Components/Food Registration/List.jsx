@@ -246,7 +246,7 @@ const List = () => {
 
   const actionBodyTemplate = (rowData) => {
     return (
-      <React.Fragment className="d-flex ">
+      <div className="d-flex ">
         <button className="">
           <Link
             className=" text-light me-1 text-dark "
@@ -264,7 +264,7 @@ const List = () => {
           {" "}
           <RiDeleteBin6Line className="text-danger fs-4" />
         </button>
-      </React.Fragment>
+      </div>
     );
   };
 

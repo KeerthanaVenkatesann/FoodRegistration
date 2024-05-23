@@ -95,3 +95,94 @@ export default function* rootSaga() {
     watchFetchUser(),
   ]);
 }
+
+
+// import { call, put, takeEvery, all } from "redux-saga/effects";
+// import api from "../Service/api"; // Ensure consistent import casing
+// import {
+//   CREATE_USER,
+//   UPDATE_USER,
+//   DELETE_USER,
+//   FETCH_USERS,
+//   FETCH_USER,
+//   CREATE_USER_SUCCESS,
+//   UPDATE_USER_SUCCESS,
+//   DELETE_USER_SUCCESS,
+//   FETCH_USERS_SUCCESS,
+//   FETCH_USER_SUCCESS,
+// } from "../Reducer/Actiontype/Types";
+
+// function* createUser(action) {
+//   try {
+//     const response = yield call(api.post, '/', action.payload);
+//     yield put({ type: CREATE_USER_SUCCESS, payload: response.data });
+//   } catch (error) {
+//     console.error("Error creating user:", error);
+//   }
+// }
+
+// function* updateUser(action) {
+//   try {
+//     const response = yield call(api.put, `/${action.payload.id}`, action.payload.user);
+//     yield put({ type: UPDATE_USER_SUCCESS, payload: response.data });
+//   } catch (error) {
+//     console.error("Error updating user:", error);
+//   }
+// }
+
+// function* deleteUser(action) {
+//   try {
+//     yield call(api.delete, `/${action.payload}`);
+//     yield put({ type: DELETE_USER_SUCCESS, payload: action.payload });
+//   } catch (error) {
+//     console.error("Error deleting user:", error);
+//   }
+// }
+
+// function* fetchUsers() {
+//   try {
+//     const response = yield call(api.get, '/');
+//     yield put({ type: FETCH_USERS_SUCCESS, payload: response.data });
+//   } catch (error) {
+//     console.error("Error fetching users:", error);
+//   }
+// }
+
+// function* fetchUser(action) {
+//   try {
+//     const response = yield call(api.get, `/${action.payload}`);
+//     yield put({ type: FETCH_USER_SUCCESS, payload: response.data });
+//   } catch (error) {
+//     console.error("Error fetching user:", error);
+//   }
+// }
+
+// function* watchCreateUser() {
+//   yield takeEvery(CREATE_USER, createUser);
+// }
+
+// function* watchUpdateUser() {
+//   yield takeEvery(UPDATE_USER, updateUser);
+// }
+
+// function* watchDeleteUser() {
+//   yield takeEvery(DELETE_USER, deleteUser);
+// }
+
+// function* watchFetchUsers() {
+//   yield takeEvery(FETCH_USERS, fetchUsers);
+// }
+
+// function* watchFetchUser() {
+//   yield takeEvery(FETCH_USER, fetchUser);
+// }
+
+// export default function* rootSaga() {
+//   yield all([
+//     watchCreateUser(),
+//     watchUpdateUser(),
+//     watchDeleteUser(),
+//     watchFetchUsers(),
+//     watchFetchUser(),
+//   ]);
+// }

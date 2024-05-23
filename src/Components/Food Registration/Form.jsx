@@ -137,7 +137,7 @@ const Form = () => {
                   <div className="input-box   px-1 col-md-6">
                     <label htmlFor="">Email</label>
                     <input
-                      type="text"
+                      type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -151,7 +151,7 @@ const Form = () => {
                   <div className="input-box   px-1 col-md-6">
                     <label htmlFor="">Phone Number </label>
                     <input
-                      type="text"
+                      type="number"
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
                     />

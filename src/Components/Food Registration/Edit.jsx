@@ -136,7 +136,7 @@ const Edit = () => {
                 <div className="input-box col-md-6 px-1">
                   <label htmlFor="">Email</label>
                   <input
-                    type="text"
+                    type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -150,7 +150,7 @@ const Edit = () => {
                 <div className="input-box px-1 col-md-6">
                   <label htmlFor="">Phone Number</label>
                   <input
-                    type="text"
+                    type="number"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                   />

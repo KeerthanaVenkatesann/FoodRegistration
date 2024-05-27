@@ -4,7 +4,7 @@ import {
   DELETE_USER,
   FETCH_USERS,
   FETCH_USER,
-} from "./Types"; // Ensure the correct relative path to Types.js
+} from "./Types"; 
 
 export const createUser = (user) => ({
   type: CREATE_USER,

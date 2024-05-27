@@ -14,11 +14,37 @@ import {
 } from "../Reducer/Actiontype/Types";
 import { API_BASE_URL } from "../Service/Api";
 
+// Watcher Sagas
+function* watchCreateUser() {
+  yield takeEvery(CREATE_USER, createUser);
+}
+
+function* watchUpdateUser() {
+  yield takeEvery(UPDATE_USER, updateUser);
+}
+
+function* watchDeleteUser() {
+  yield takeEvery(DELETE_USER, deleteUser);
+}
+
+function* watchFetchUsers() {
+  yield takeEvery(FETCH_USERS, fetchUsers);
+}
+
+function* watchFetchUser() {
+  yield takeEvery(FETCH_USER, fetchUser);
+}   
+
+
+
+
 // Worker Sagas
 function* createUser(action) {
   try {
     const response = yield call(axios.post, API_BASE_URL, action.payload);
+
     yield put({ type: CREATE_USER_SUCCESS, payload: response.data });
+    
   } catch (error) {
     console.error("Error creating user:", error);
   }
@@ -64,26 +90,7 @@ function* fetchUser(action) {
   }
 }
 
-// Watcher Sagas
-function* watchCreateUser() {
-  yield takeEvery(CREATE_USER, createUser);
-}
 
-function* watchUpdateUser() {
-  yield takeEvery(UPDATE_USER, updateUser);
-}
-
-function* watchDeleteUser() {
-  yield takeEvery(DELETE_USER, deleteUser);
-}
-
-function* watchFetchUsers() {
-  yield takeEvery(FETCH_USERS, fetchUsers);
-}
-
-function* watchFetchUser() {
-  yield takeEvery(FETCH_USER, fetchUser);
-}
 
 // Root Saga
 export default function* rootSaga() {
@@ -95,7 +102,6 @@ export default function* rootSaga() {
     watchFetchUser(),
   ]);
 }
-
 
 // import { call, put, takeEvery, all } from "redux-saga/effects";
 // import api from "../Service/api"; // Ensure consistent import casing

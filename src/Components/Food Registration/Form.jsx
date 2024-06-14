@@ -79,7 +79,7 @@ const Form = () => {
       validationErrors.date =
         "Opening date is required. Please provide the intended opening date for your business.";
     }
-
+   debugger
     if (Object.keys(validationErrors).length === 0) {
       dispatch(
         createUser({
@@ -105,7 +105,7 @@ const Form = () => {
     const value = e.target.value;
     const filteredValue = value.replace(/[^a-zA-Z\s]/g, "");
     setName(filteredValue);
-  };
+  };
 
   return (
     <>
@@ -128,7 +128,6 @@ const Form = () => {
                       value={name}
                       // onChange={(e) => setName(e.target.value)}
                       onChange={handleNameChange}
-
                     />
                     {errors.name && (
                       <span className="error">{errors.name}</span>

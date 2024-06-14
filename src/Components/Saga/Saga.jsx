@@ -19,6 +19,11 @@ function* watchCreateUser() {
   yield takeEvery(CREATE_USER, createUser);
 }
 
+
+
+
+
+
 function* watchUpdateUser() {
   yield takeEvery(UPDATE_USER, updateUser);
 }
@@ -49,6 +54,15 @@ function* createUser(action) {
     console.error("Error creating user:", error);
   }
 }
+
+
+
+
+
+
+
+
+
 
 function* updateUser(action) {
   try {

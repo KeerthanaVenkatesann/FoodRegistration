@@ -94,7 +94,7 @@ export default function Header({ selectedLocation, setSelectedLocation }) {
           <img src="/Assets/logo (2).png" alt="" width="50px" height="50px" />
           <Link to="/">FOOD REGISTRATION</Link>
           <div className="dropdown ms-auto">
-            <select
+            {/* <select
               className="location-dropdown"
               value={selectedLocation}
               onChange={handleLocationChange}
@@ -104,7 +104,7 @@ export default function Header({ selectedLocation, setSelectedLocation }) {
                   {location}
                 </option>
               ))}
-            </select>
+            </select> */}
           </div>
           <Link to="/foodregistration" className="register">
             Register

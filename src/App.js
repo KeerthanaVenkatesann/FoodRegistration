@@ -20,7 +20,7 @@ function App() {
       <Route path='/foodregistration'element={<Form/>}></Route>
       <Route path='/listmanaging'element={<List/>}></Route>
       <Route path='/edit'element={<Edit/>}></Route>
-      <Route path='/home'element={<Home />}></Route>
+      {/* <Route path='/home'element={<Home />}></Route> */}
       {/* <Route path='/'element={<Main />}></Route> */}
     </Routes>
       </BrowserRouter>
